@@ -1,5 +1,6 @@
 
  //Business Logic
+ //First Function
 
  function wordCounter(text) {
    if (text.trim().length === 0) {
@@ -24,7 +25,7 @@ function numberOfOcurrencesInText(word, text) {
   const wordArray = text.split(" ");
   let wordCount = 0;
   wordArray.forEach(function(element) {
-    if (word === element) {
+    if (word.toLowerCase().includes(word.toLowerCase())) {
       wordCount++
     }
   });
