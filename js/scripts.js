@@ -15,5 +15,8 @@
    return wordCount;
  }
  
+//Second Function
 
-
+function numberOfOcurrencesInText(word, text) {
+    return 0;
+}
