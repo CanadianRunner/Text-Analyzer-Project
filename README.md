@@ -63,3 +63,11 @@ Test: "It should return a word matcfh regardless of case."
 Code: 
 const text = "red RED Red green Green GREEN;
 Expected Output: 3
+
+<--Test 6-->
+Test: "It should return a word match regardless of punctuation."
+Code:
+const text = "Red! Red.  I like red, green, and yellow.";
+const word = "Red";
+numberOfOccurencesInText(word, text);
+Expected Output: 3
