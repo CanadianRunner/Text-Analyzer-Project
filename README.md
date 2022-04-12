@@ -20,3 +20,11 @@ Test: "It should not count numbers as words."
 Code: wordCounter("hi there 77 19");
 Expected Output: 2
 
+Describe: numberOfOcccurencesInText()
+
+Test: "It should return 0 occurences of a word for an empty string."
+Code:
+const text = "";
+const word = "red";
+numberOfOccurencesInText(word, text);
+Expected Output: 0
