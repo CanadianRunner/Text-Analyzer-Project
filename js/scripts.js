@@ -54,7 +54,9 @@ function boldPassage(word, text) {
   } else {
     htmlString = htmlString.concat(element);
   }
+  if (index !== (textArray.length -1)) {
   htmlString = htmlString.concat(" ");
+  }
 });
 return htmlString + "</p>";
 }
