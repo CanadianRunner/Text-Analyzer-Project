@@ -1,6 +1,11 @@
 
+//Utility Logic
+
+function noInputtedWord(word, text) {
+  return ((text.trim().length === 0 || (word.trim().length === 0));
+}
+
  //Business Logic
- //First Function
 
  function wordCounter(text) {
   if (text.trim().length === 0) {
@@ -16,7 +21,7 @@
   return wordCount;
 }
 
-//Second Function
+
 function numberOfOccurrencesInText(word, text) {
   if (text.trim().length === 0 || (word.trim().length === 0 )) {
     return 0;
@@ -29,6 +34,27 @@ function numberOfOccurrencesInText(word, text) {
     }
   });
   return wordCount;
+}
+
+// boldPassage()
+
+function boldPassage(word, text) {
+  if ((text.trim().length === 0) || (word.trim().length === 0)) {
+    return "";
+  }
+  let htmlString = "<p>";
+  let textArray = text.split(" ");
+  textArray.forEach(function(element, index) {
+    if (element.toLowerCase().includes(word.toLowerCase())) {
+      htmlString = htmlString.concat("<b>" + element + "</b>");
+    } else {
+      htmlString = htmlString.concat(element);
+    }
+    if (index !== (textArray.length - 1)) {
+      htmlString = htmlString.concat(" ");
+    }
+  });
+  return htmlString + "</p>";
 }
 
 //UI Logic
@@ -45,18 +71,3 @@ $(document).ready(function(){
   });
 });
 
-function boldPassage(word, text) {
-  let htmlString = "<p>";
-  let textArray = text.split(" ");
-  textArray.forEach(function(element) {
-  if (word === element) {
-    htmlString = htmlString.concat("<b>" + element + "</b>");
-  } else {
-    htmlString = htmlString.concat(element);
-  }
-  if (index !== (textArray.length -1)) {
-  htmlString = htmlString.concat(" ");
-  }
-});
-return htmlString + "</p>";
-}
