@@ -31,3 +31,17 @@ function numberOfOcurrencesInText(word, text) {
   });
   return wordCount;
 }
+
+//UI Logic
+
+$(document).ready(function(){
+  $("form#word-counter").submit(function(event){
+    event.preventDefault();
+    const passage = $("#text-passage").val();
+    const word = $("#word").val();
+    const wordCount = wordCounter(passage);
+    const occurencesOfWord = numberOfOccurencesInText(word, passage);
+    $("#total-count").html(wordCount);
+    $("#selected-count").html(occurencesOfWord);
+  });
+});
